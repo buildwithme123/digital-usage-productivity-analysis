@@ -8,9 +8,9 @@ import matplotlib.pyplot as plt
 @st.cache_resource
 def load_assets():
     try:
-        lr = joblib.load('logistic_regression_model.pkl')
-        rf = joblib.load('random_forest_model.pkl')
-        dt = joblib.load('decision_tree_model.pkl')
+        lr = joblib.load('logistic_regression.pkl')
+        rf = joblib.load('random_forest.pkl')
+        dt = joblib.load('decision_tree.pkl')
         # Load background data for SHAP (Ensure this file is in your GitHub)
         bg_data = pd.read_csv('train_reference.csv') 
         return lr, rf, dt, bg_data
