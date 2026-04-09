@@ -189,8 +189,8 @@ if st.button("Generate Detailed Report"):
                 st.info(SUGGESTIONS[label].get(direction, "Keep optimizing this habit."))
 
     if tgt_cls == 0:
-        st.error("Action required: Your digital habits are significantly impacting your performance.")
+        st.error("You are predicted to have LOW PRODUCTIVITY.Your digital usage patterns are significantly impactingyour academic performance and wellbeing. Start with smallchanges: reduce phone time by 1 hr/day, sleep by 10pm,and keep phones away during study. Consistency is key..")
     elif tgt_cls == 1:
-        st.warning("Good progress, but reducing screen time further will boost your focus.")
+        st.warning("You are predicted to be MEDIUM PRODUCTIVE.There is room for improvement in your digital habits. Address the key factors highlighted above — especiallyscreen time, sleep, and focus during study sessions.")
     else:
-        st.success("Excellent! You have a very healthy relationship with your digital devices.")
+        st.success("You are predicted to be HIGHLY PRODUCTIVE. Your digital habits and study patterns are well-balanced.Keep maintaining your current routine and focus habits. Focus on sustaining sleep quality and study consistency.")
