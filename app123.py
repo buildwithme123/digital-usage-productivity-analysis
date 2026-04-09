@@ -162,7 +162,7 @@ def manual_shap_single(model, sample, background, n_repeats=50):
     return shapley / n_repeats, target_class, pred_proba
 
 # --- STEP 5: UI ---
-st.title("📊 Personal Productivity Consultant")
+st.title("📊 Digital Usuage Producitivty Analysis")
 st.sidebar.header("Settings")
 model_choice = st.sidebar.selectbox("Model", ("Random Forest", "Logistic Regression", "Decision Tree"))
 
