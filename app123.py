@@ -50,6 +50,10 @@ SUGGESTIONS = {
         'high': " Your smartphone usage is high. Try setting daily screen-time limits (e.g., under 3 hrs) using built-in phone tools.",
         'low':  " Your smartphone usage is well-controlled. Keep it up!"
     },
+    'Daily Social Media Time (hrs)': {
+        'high': " Excessive social media is linked to lower productivity. Consider a 30-min daily cap using app timers.",
+        'low':  " Your social media time is healthy and unlikely to impact productivity."
+    },
     
     'Notification Checking Frequency': {
         'high': " Frequent notification checks break your focus. Switch to 'Do Not Disturb' during study hours.",
@@ -167,6 +171,7 @@ with col1:
     age = st.number_input("What is your age?", 10, 100, 20)
     gender = st.selectbox("Gender", list(gender_map.keys()))
     usage = st.selectbox("Daily Smartphone Usage", list(smartphone_map.keys()))
+    social_media = st.selectbox("Approximate time spent per day on Social media ?(in hours)", list(approx_map.keys()))
     notif = st.selectbox("How often do you check notifications?", list(notification_map.keys()))
     sleep_before = st.selectbox("Do you use phone before sleeping?", ["Yes", "No"])
     sleep_time = st.selectbox("Hours before sleep usage", list(sleep_map_time.keys()))
@@ -190,7 +195,7 @@ if st.button("Generate Detailed Report"):
         'What is your age?': age,
         'Gender?': gender_map[gender],
         'How many hours per day do you use your smartphone?': smartphone_map[usage],
-        #'Approximate time spent per day on Social media ?(in hours)': approx_map[usage if usage in approx_map else 'less than 1'],
+        'Approximate time spent per day on Social media ?(in hours)': approx_map[social_media],
         'How often do you check notifications?': notification_map[notif],
         'Do you use your phone before sleeping?': yes_no_3map[sleep_before],
         'How long do you use your phone before going to sleep?(in hours)': sleep_map_time[sleep_time],
