@@ -190,7 +190,7 @@ if st.button("Generate Detailed Report"):
         'What is your age?': age,
         'Gender?': gender_map[gender],
         'How many hours per day do you use your smartphone?': smartphone_map[usage],
-        'Approximate time spent per day on Social media ?(in hours)': approx_map[usage if usage in approx_map else 'less than 1'],
+        #'Approximate time spent per day on Social media ?(in hours)': approx_map[usage if usage in approx_map else 'less than 1'],
         'How often do you check notifications?': notification_map[notif],
         'Do you use your phone before sleeping?': yes_no_3map[sleep_before],
         'How long do you use your phone before going to sleep?(in hours)': sleep_map_time[sleep_time],
