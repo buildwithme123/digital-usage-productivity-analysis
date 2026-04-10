@@ -235,7 +235,7 @@ if st.button("Generate Detailed Report"):
         shap_v = row['SHAP']
         direction = get_factor_direction(label, row['Value'], shap_v)
         
-        with st.expander(f"{'▲ Boosts' if shap_v > 0 else '▼ Hurts '} {label}"):
+        with st.expander(f"{'▲ ' if shap_v > 0 else '▼  '} {label}"):
             st.write(f"**Impact:** {'Positive' if shap_v > 0 else 'Negative'}")
             if label in SUGGESTIONS:
                 st.info(SUGGESTIONS[label].get(direction, "Keep optimizing this habit."))
