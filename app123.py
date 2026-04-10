@@ -162,7 +162,7 @@ def manual_shap_single(model, sample, background, n_repeats=50):
     return shapley / n_repeats, target_class, pred_proba
 
 # --- STEP 5: UI ---
-st.title("📊 Digital Usuage Productivity Analysis")
+st.title(" Digital Usuage Productivity Analysis")
 st.sidebar.header("Settings")
 model_choice = st.sidebar.selectbox("Model", ("Random Forest", "Logistic Regression", "Decision Tree"))
 
@@ -223,7 +223,7 @@ if st.button("Generate Detailed Report"):
     st.write(f"Confidence: {probas[tgt_cls]*100:.1f}%")
 
     # Factors & Suggestions
-    st.subheader("💡 Key Insights & Suggestions")
+    st.subheader("Key Insights & Suggestions")
     local_df = pd.DataFrame({'Feature': input_df.columns, 'SHAP': shap_vals, 'Value': input_df.values.flatten()})
     local_df['Label'] = local_df['Feature'].map(lambda x: FEATURE_LABELS.get(x, x))
     
@@ -235,7 +235,7 @@ if st.button("Generate Detailed Report"):
         shap_v = row['SHAP']
         direction = get_factor_direction(label, row['Value'], shap_v)
         
-        with st.expander(f"{'✅' if shap_v > 0 else '⚠️'} {label}"):
+        with st.expander(f"{'▲ Boosts' if shap_v > 0 else '▼ Hurts '} {label}"):
             st.write(f"**Impact:** {'Positive' if shap_v > 0 else 'Negative'}")
             if label in SUGGESTIONS:
                 st.info(SUGGESTIONS[label].get(direction, "Keep optimizing this habit."))
