@@ -180,14 +180,14 @@ if not st.session_state.started:
     Beyond simple prediction:
     The system identifies your unique Key Contributing Factors, highlighting exactly which habits drive your focus and which create "digital friction." Finally, we provide evidence-based suggestions to help you reclaim your time and optimize your workflow.
     """)
-    st.button("Start My Analysis", on_click=start_analysis, type="primary")
+    st.button("Fill the Form", on_click=start_analysis, type="primary")
 
 else:
     # --- FORM PAGE ---
     st.title(" Behavioral Data Entry")
     st.sidebar.header("Configuration")
     model_choice = st.sidebar.selectbox("Model", ("Random Forest", "Logistic Regression", "Decision Tree"))
-    st.sidebar.button("Fill the Form", on_click=go_home)
+    st.sidebar.button("Go to Home", on_click=go_home)
 
     col1, col2 = st.columns(2)
     with col1:
