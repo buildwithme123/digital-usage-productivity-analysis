@@ -172,7 +172,7 @@ if not st.session_state.started:
    st.markdown("""
         <style>
         .main-title {
-            font-size: 12px;
+            font-size: 6rem;
             font-weight: 700;
             color: #1E88E5;
             margin-bottom: 0;
