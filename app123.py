@@ -169,18 +169,67 @@ def manual_shap_single(model, sample, background, n_repeats=50):
 # --- 5. PAGE NAVIGATION ---
 if not st.session_state.started:
     # --- LANDING PAGE ---
-    st.title("🚀 Digital Usage Productivity Analyzer")
-    st.markdown("""
-    ### Welcome!
-    Digital Usage Behavior Analysis is a machine learning–based project designed to analyze how digital habits impact individual productivity.
-    
-    The Digital Usage Insight Engine
-    Our project bridges the gap between digital habits and cognitive performance. By leveraging advanced machine learning algorithms, we analyze complex behavioral patterns—ranging from smartphone latency to social media engagement—to predict daily productivity levels.
+   st.markdown("""
+        <style>
+        .main-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1E88E5;
+            margin-bottom: 0;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+        </style>
+    """, unsafe_allow_html=True)
 
-    Beyond simple prediction:
-    The system identifies your unique Key Contributing Factors, highlighting exactly which habits drive your focus and which create "digital friction." Finally, we provide evidence-based suggestions to help you reclaim your time and optimize your workflow.
-    """)
-    st.button("Fill the Form", on_click=start_analysis, type="primary")
+    st.markdown('<p class="main-title">🚀 Digital Usage Insight Engine</p>', unsafe_allow_html=True)
+    st.markdown('<p class="subtitle">Decoding the impact of digital habits on cognitive performance.</p>', unsafe_allow_html=True)
+
+    # --- 2. THE THREE PILLARS SECTION ---
+    # Using columns to create a "Feature Grid"
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.markdown("### 🧠\n**Predict**\nAdvanced ML algorithms analyze your smartphone and social media patterns to classify your productivity.")
+
+    with col2:
+        st.markdown("### 🔍\n**Analyze**\nIdentify your 'Digital Friction' points through Key Contributing Factors and SHAP analysis.")
+
+    with col3:
+        st.markdown("### 💡\n**Optimize**\nReceive evidence-based suggestions to reclaim your focus and optimize your workflow.")
+
+    st.divider()
+
+    # --- 3. PROJECT DESCRIPTION SECTION ---
+    with st.container():
+        left_co, right_co = st.columns([2, 1])
+        with left_co:
+            st.markdown("#### **About the Project**")
+            st.write("""
+                In an era of constant connectivity, our project bridges the gap between raw data and actionable habits. 
+                Whether it's smartphone latency, notification frequency, or pre-sleep digital duration, 
+                our engine identifies exactly what drives your focus.
+            """)
+            
+            # Key Highlights
+            st.markdown("- **Explainable AI:** We don't just predict; we explain the 'Why'.")
+            st.markdown("- **Behavioral Science:** Data-backed suggestions for habit change.")
+            st.markdown("- **Multi-Model Support:** Choose between Random Forest, Decision Trees, or Logistic Regression.")
+
+        with right_co:
+            # A visual box for "Project Goal"
+            st.success("**Goal:** To empower users with data-driven insights to break digital addiction and boost academic success.")
+
+    st.divider()
+
+    # --- 4. ACTION CALL ---
+    st.info("Ready to see how your digital habits stack up? Provide your details below.")
+    
+    # Large primary button
+    st.button("Start My Analysis ➔", on_click=start_analysis, type="primary", use_container_width=True)
 
 else:
     # --- FORM PAGE ---
