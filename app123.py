@@ -185,7 +185,7 @@ if not st.session_state.started:
         </style>
     """, unsafe_allow_html=True)
 
-   st.markdown('<p class="main-title"> Digital Usage Productivity Analysis</p>', unsafe_allow_html=True)
+   st.markdown('<h1 class="main-title"> Digital Usage Productivity Analysis</h1>', unsafe_allow_html=True)
    st.markdown('<p class="subtitle">Decoding the impact of digital habits on cognitive performance.</p>', unsafe_allow_html=True)
 
     # --- 2. THE THREE PILLARS SECTION ---
@@ -219,9 +219,9 @@ if not st.session_state.started:
             st.markdown("- **Behavioral Science:** Data-backed suggestions for habit change.")
             st.markdown("- **Multi-Model Support:** Choose between Random Forest, Decision Trees, or Logistic Regression.")
 
-        with right_co:
+        #with right_co:
             # A visual box for "Project Goal"
-            st.success("**Goal:** To empower users with data-driven insights to break digital addiction and boost academic success.")
+            #st.success("**Goal:** To empower users with data-driven insights to break digital addiction and boost academic success.")
 
    st.divider()
 
