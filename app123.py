@@ -55,22 +55,72 @@ CLASS_NAMES = ['Low Productive', 'Medium Productive', 'High Productive']
 CLASS_EMOJIS = ['🔴', '🟡', '🟢']
 
 SUGGESTIONS = {
-    'Daily Smartphone Usage (hrs)': {'high': "Your smartphone usage is high. Try setting daily limits (under 3 hrs).", 'low': "Usage is well-controlled."},
-    'Daily Social Media Time (hrs)': {'high': "Excessive social media lowers productivity. Try a 30-min daily cap.", 'low': "Social media time is healthy."},
-    'Notification Checking Frequency': {'high': "Frequent checks break focus. Use 'Do Not Disturb' while studying.", 'low': "Infrequent checks — great for deep focus."},
-    'Phone Use Before Sleep': {'high': "Screen time disrupts sleep. Stop 60 min before bed.", 'low': "Avoiding pre-sleep phone use supports quality rest."},
-    'Pre-Sleep Phone Duration (hrs)': {'high': "Long night usage hurts sleep. Set a phone curfew.", 'low': "Short screen time protects your sleep cycle."},
-    'Phone Use on Waking Up': {'high': "Avoid reaching for your phone immediately. Try a screen-free morning routine.", 'low': "Starting screen-free keeps you proactive."},
-    'Daily Sleep (hrs)': {'low': "Aim for 7–8 hours; it directly boosts cognitive performance.", 'high': "Good sleep duration is a strong predictor of success."},
-    'Daytime Tiredness/Sleepiness': {'high': "Tiredness suggests poor sleep. Review your schedule and night screen use.", 'low': "Energy levels are good."},
-    'Daily Study Hours': {'low': "Gradually increase focused study time using the Pomodoro technique.", 'high': "Good study duration — maintain consistency."},
-    'CGPA': {'low': "CGPA suggests room for improvement. Focus on consistency.", 'high': "Strong CGPA — keep it up."},
-    'Focus During Study': {'low': "Remove your phone from your study space to improve focus.", 'high': "Good focus is a major driver of your productivity."},
-    'Digital Usage = Main Stress Source': {'high': "Usage is causing stress. Take regular digital breaks.", 'low': "Digital usage isn't your primary stressor."},
-    'Device Addiction Level': {'high': "Signs of addiction detected. Try a weekly 'digital detox'.", 'low': "Healthy control over device use."},
-    'Stress After Long Screen Time': {'high': "Follow the 20-20-20 rule to reduce screen stress.", 'low': "Screen time doesn't significantly stress you."},
-    'Online Time Affects Mood': {'high': "Curate positive content and limit doom-scrolling.", 'low': "Mood is not significantly impacted by online time."},
-    'Phone-Separation Anxiety': {'high': "Practice intentional phone-free periods to reduce anxiety.", 'low': "Healthy digital boundaries detected."}
+   'Daily Smartphone Usage (hrs)': {
+        'high': " Your smartphone usage is high. Try setting daily screen-time limits (e.g., under 3 hrs) using built-in phone tools.",
+        'low':  " Your smartphone usage is well-controlled. Keep it up!"
+    },
+    'Daily Social Media Time (hrs)': {
+        'high': " Excessive social media is linked to lower productivity. Consider a 30-min daily cap using app timers.",
+        'low':  " Your social media time is healthy and unlikely to impact productivity."
+    },
+    
+    'Notification Checking Frequency': {
+        'high': " Frequent notification checks break your focus. Switch to 'Do Not Disturb' during study hours.",
+        'low':  " You check notifications infrequently — great for maintaining deep focus."
+    },
+    'Phone Use Before Sleep': {
+        'high': " Using your phone before sleep disrupts melatonin production. Try stopping screens 30–60 min before bed.",
+        'low':  " Avoiding pre-sleep phone use supports better sleep quality."
+    },
+    'Pre-Sleep Phone Duration (hrs)': {
+        'high': " Long phone use at night hurts sleep quality. Set a phone curfew and use night mode.",
+        'low':  " Short or no pre-sleep screen time — this protects your sleep cycle."
+    },
+    'Phone Use on Waking Up': {
+        'high': " Reaching for your phone immediately after waking sets a reactive tone. Try a 15-min screen-free morning routine.",
+        'low':  " Starting your day screen-free helps maintain a proactive mindset."
+    },
+    'Daily Sleep (hrs)': {
+        'low':  " You're not getting enough sleep. Aim for 7–8 hours nightly — it directly boosts cognitive performance.",
+        'high': " Good sleep duration is one of the strongest predictors of productivity."
+    },
+    'Daytime Tiredness/Sleepiness': {
+        'high': "Feeling tired during the day suggests poor sleep quality or quantity. Review your sleep schedule and reduce late-night screen use.",
+        'low':  " Low daytime tiredness — your rest and energy levels are good."
+    },
+    'Daily Study Hours': {
+        'low':  " You study fewer hours per day. Gradually increase focused study time using techniques like Pomodoro (25 min on, 5 min break).",
+        'high': " Good daily study duration — maintain consistency for best results."
+    },
+    'CGPA': {
+        'low':  " Your CGPA suggests room for academic improvement. Focus on consistency, attend classes, and seek help early.",
+        'high': " Strong CGPA — keep maintaining your academic habits."
+    },
+    'Focus During Study': {
+        'low':  " Difficulty focusing during study is a key concern. Remove phone from your study space and use focus apps like Forest.",
+        'high': " Good focus during studies — this is a major driver of productivity."
+    },
+    'Digital Usage = Main Stress Source': {
+        'high': " Your digital usage is causing stress. Take regular digital breaks and practice mindfulness for 10 min daily.",
+        'low':  " Digital usage isn't your primary stressor — a positive sign."
+    },
+    
+    'Device Addiction Level': {
+        'high': " Signs of device addiction detected. Try a weekly 'digital detox' day and track usage via screen-time apps.",
+        'low':  " Low device addiction — you have healthy control over your device use."
+    },
+    'Stress After Long Screen Time': {
+        'high': " Long screen sessions cause you stress. Follow the 20-20-20 rule: every 20 min, look 20 ft away for 20 sec.",
+        'low':  " Screen time doesn't significantly stress you out."
+    },
+    'Online Time Affects Mood': {
+        'high': " Your mood is affected by time spent online. Be intentional — curate positive content and limit doom-scrolling.",
+        'low':  " Your mood is not significantly impacted by online time."
+    },
+    'Phone-Separation Anxiety': {
+        'high': " High anxiety when away from your phone is a concern. Practice intentional phone-free periods to build comfort.",
+        'low':  " You're comfortable without your phone — a sign of healthy digital boundaries."
+    },
 }
 
 gender_map = {'Male': 0, 'Female': 1}
@@ -122,45 +172,45 @@ if not st.session_state.started:
     st.title("🚀 Digital Usage Productivity Analyzer")
     st.markdown("""
     ### Welcome!
-    This application uses AI to analyze how your digital habits (smartphone use, social media, and sleep)
-    directly impact your academic focus and productivity.
+    Digital Usage Behavior Analysis is a machine learning–based project designed to analyze how digital habits impact individual productivity.
     
-    **How it works:**
-    1. Provide your behavioral data via our form.
-    2. Our AI models predict your productivity classification.
-    3. We generate a technical report showing which factors are boosting or hurting you.
+    The Digital Usage Insight Engine
+    Our project bridges the gap between digital habits and cognitive performance. By leveraging advanced machine learning algorithms, we analyze complex behavioral patterns—ranging from smartphone latency to social media engagement—to predict daily productivity levels.
+
+    Beyond simple prediction:
+    The system identifies your unique Key Contributing Factors, highlighting exactly which habits drive your focus and which create "digital friction." Finally, we provide evidence-based suggestions to help you reclaim your time and optimize your workflow.
     """)
     st.button("Start My Analysis", on_click=start_analysis, type="primary")
 
 else:
     # --- FORM PAGE ---
-    st.title("📝 Behavioral Data Entry")
+    st.title(" Behavioral Data Entry")
     st.sidebar.header("Configuration")
     model_choice = st.sidebar.selectbox("Model", ("Random Forest", "Logistic Regression", "Decision Tree"))
-    st.sidebar.button("Back to Home", on_click=go_home)
+    st.sidebar.button("Fill the Form", on_click=go_home)
 
     col1, col2 = st.columns(2)
     with col1:
         age = st.number_input("What is your age?", 10, 100, 20)
         gender = st.selectbox("Gender", list(gender_map.keys()))
-        usage = st.selectbox("Daily Smartphone Usage", list(smartphone_map.keys()))
+        usage = st.selectbox(" Daily Smartphone Usage", list(smartphone_map.keys()))
         notif = st.selectbox("How often do you check notifications?", list(notification_map.keys()))
-        social_media = st.selectbox("Social media time (hours)", list(approx_map.keys()))
-        sleep_before = st.selectbox("Use phone before sleeping?", ["Yes", "No"])
+        social_media = st.selectbox("Approximate time spent per day on Social media ?(in hours)", list(approx_map.keys()))
+        sleep_before = st.selectbox("Do you use phone before sleeping?", ["Yes", "No"])
         sleep_time = st.selectbox("Hours before sleep usage", list(sleep_map_time.keys()))
-        wake_up = st.selectbox("Use device after waking?", ["Yes", "No"])
-        daily_sleep = st.selectbox("Total daily sleep?", list(hour_map.keys()))
+        wake_up = st.selectbox("Use device immediately after waking up?", ["Yes", "No"])
+        daily_sleep = st.selectbox("Total sleep hours daily?", list(hour_map.keys()))
 
     with col2:
-        tired = st.selectbox("Feel tired during the day?", list(tired_map.keys()))
+         tired = st.selectbox("Feel tired/sleepy during the day?", list(tired_map.keys()))
         study_hrs = st.selectbox("Daily Study Hours?", list(study_map.keys()))
-        cgpa_val = st.selectbox("Your CGPA?", list(cgpa_map.keys()))
-        focus_val = st.selectbox("Able to focus?", ["yes", "no"])
-        stress_val = st.selectbox("Usage is main stress source?", ["yes", "no"])
-        addict_val = st.selectbox("Feel addicted?", list(addicted_map.keys()))
-        scr_stress = st.selectbox("Stressed after screen time?", list(stressed_map.keys()))
-        mood_val = st.selectbox("Online time affects mood?", list(spending_map.keys()))
-        anxious_val = st.selectbox("Anxious without phone?", list(anxious_map.keys()))
+        cgpa_val = st.selectbox("What is your CGPA?", list(cgpa_map.keys()))
+        focus_val = st.selectbox("Able to focus during study?", ["yes", "no"])
+        stress_val = st.selectbox("Digital usage is main source of stress?", ["yes", "no"])
+        addict_val = st.selectbox("Feel addicted to digital devices?", list(addicted_map.keys()))
+        scr_stress = st.selectbox("Stressed after long screen time?", list(stressed_map.keys()))
+        mood_val = st.selectbox("Spending time online affects mood?", list(spending_map.keys()))
+        anxious_val = st.selectbox("Anxious without phone/internet?", list(anxious_map.keys()))
 
     if st.button("Generate Detailed Report"):
         data = {
