@@ -190,21 +190,21 @@ if not st.session_state.started:
 
     # --- 2. THE THREE PILLARS SECTION ---
     # Using columns to create a "Feature Grid"
-    col1, col2, col3 = st.columns(3)
+   col1, col2, col3 = st.columns(3)
 
-    with col1:
+   with col1:
         st.markdown("### 🧠\n**Predict**\nAdvanced ML algorithms analyze your smartphone and social media patterns to classify your productivity.")
 
-    with col2:
+   with col2:
         st.markdown("### 🔍\n**Analyze**\nIdentify your 'Digital Friction' points through Key Contributing Factors and SHAP analysis.")
 
-    with col3:
+   with col3:
         st.markdown("### 💡\n**Optimize**\nReceive evidence-based suggestions to reclaim your focus and optimize your workflow.")
 
-    st.divider()
+   st.divider()
 
     # --- 3. PROJECT DESCRIPTION SECTION ---
-    with st.container():
+   with st.container():
         left_co, right_co = st.columns([2, 1])
         with left_co:
             st.markdown("#### **About the Project**")
@@ -223,13 +223,13 @@ if not st.session_state.started:
             # A visual box for "Project Goal"
             st.success("**Goal:** To empower users with data-driven insights to break digital addiction and boost academic success.")
 
-    st.divider()
+   st.divider()
 
     # --- 4. ACTION CALL ---
-    st.info("Ready to see how your digital habits stack up? Provide your details below.")
+   st.info("Ready to see how your digital habits stack up? Provide your details below.")
     
     # Large primary button
-    st.button("Start My Analysis ➔", on_click=start_analysis, type="primary", use_container_width=True)
+   st.button("Start My Analysis ➔", on_click=start_analysis, type="primary", use_container_width=True)
 
 else:
     # --- FORM PAGE ---
