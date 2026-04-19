@@ -185,7 +185,7 @@ if not st.session_state.started:
         </style>
     """, unsafe_allow_html=True)
 
-   st.markdown('<p class="main-title"> Digital Usage Productivity</p>', unsafe_allow_html=True)
+   st.markdown('<p class="main-title"> Digital Usage Productivity Analysis</p>', unsafe_allow_html=True)
    st.markdown('<p class="subtitle">Decoding the impact of digital habits on cognitive performance.</p>', unsafe_allow_html=True)
 
     # --- 2. THE THREE PILLARS SECTION ---
@@ -193,13 +193,13 @@ if not st.session_state.started:
    col1, col2, col3 = st.columns(3)
 
    with col1:
-        st.markdown("### **Predict**\nAdvanced ML algorithms analyze your smartphone and social media patterns to classify your productivity.")
+        st.markdown("### Predict\nAdvanced ML algorithms analyze your smartphone and social media patterns to classify your productivity.")
 
    with col2:
-        st.markdown("### **Analyze**\nIdentify your 'Digital Friction' points through Key Contributing Factors and SHAP analysis.")
+        st.markdown("### Analyze\nIdentify your 'Digital Friction' points through Key Contributing Factors and SHAP analysis.")
 
    with col3:
-        st.markdown("### **Optimize**\nReceive evidence-based suggestions to reclaim your focus and optimize your workflow.")
+        st.markdown("### Optimize\nReceive evidence-based suggestions to reclaim your focus and optimize your workflow.")
 
    st.divider()
 
