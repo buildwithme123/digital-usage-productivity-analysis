@@ -202,7 +202,7 @@ else:
         daily_sleep = st.selectbox("Total sleep hours daily?", list(hour_map.keys()))
 
     with col2:
-         tired = st.selectbox("Feel tired/sleepy during the day?", list(tired_map.keys()))
+        tired = st.selectbox("Feel tired/sleepy during the day?", list(tired_map.keys()))
         study_hrs = st.selectbox("Daily Study Hours?", list(study_map.keys()))
         cgpa_val = st.selectbox("What is your CGPA?", list(cgpa_map.keys()))
         focus_val = st.selectbox("Able to focus during study?", ["yes", "no"])
