@@ -185,8 +185,8 @@ if not st.session_state.started:
         </style>
     """, unsafe_allow_html=True)
 
-    st.markdown('<p class="main-title">🚀 Digital Usage Insight Engine</p>', unsafe_allow_html=True)
-    st.markdown('<p class="subtitle">Decoding the impact of digital habits on cognitive performance.</p>', unsafe_allow_html=True)
+        st.markdown('<p class="main-title">🚀 Digital Usage Insight Engine</p>', unsafe_allow_html=True)
+        st.markdown('<p class="subtitle">Decoding the impact of digital habits on cognitive performance.</p>', unsafe_allow_html=True)
 
     # --- 2. THE THREE PILLARS SECTION ---
     # Using columns to create a "Feature Grid"
